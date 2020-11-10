@@ -36,7 +36,6 @@ function getEmpHrs(empCheck){
     return empHrs;
 }
 
-
 var empHrs=0;
 var workingDays=0;
 while(empHrs<MAX_HRS_IN_MONTH && workingDays<NUM_OF_WORKING_DAYS){
