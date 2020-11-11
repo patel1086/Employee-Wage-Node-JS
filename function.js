@@ -83,3 +83,16 @@
     }
     console.log("prime factor of 15 is: "+primeFactors(15));
 }
+
+//Addition
+var value=process.argv;
+function add(val1,val2){
+    let c=parseInt(val1)+parseInt(val2);
+    console.log("Addition is: "+c);
+}
+add(value[2],value[3]);
+
+//Multiply
+//const prompt=require("prompt-sync");
+// let numinput=prompt("enter value");
+// console.log("Multiply number is: "+numinput);

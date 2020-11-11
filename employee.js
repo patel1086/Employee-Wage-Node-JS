@@ -38,12 +38,21 @@ function getEmpHrs(empCheck){
 
 var empHrs=0;
 var workingDays=0;
+var totalEmpHrs=0;
+var empwageArray=new Array();
+function calEmpWage(empHrs){
+    return empHrs*WAGER_PER_HOUR;
+}
 while(empHrs<MAX_HRS_IN_MONTH && workingDays<NUM_OF_WORKING_DAYS){
     workingDays++;
     let empCheck=Math.floor(Math.random()*10)%3;
-    empHrs+=getEmpHrs(empCheck);
+    empHrs=getEmpHrs(empCheck);
+    totalEmpHrs+=empHrs;
+    empwageArray.push(calEmpWage(empHrs));
     }
-let empWage=empHrs*WAGER_PER_HOUR;
-console.log("Total Employee Hours is: "+empHrs+" And total employee Wages is: "+ empWage);
+totalEmpWage=calEmpWage(totalEmpHrs);
+console.log("Total Employee Hours is: "+totalEmpHrs+" And total employee Wages is: "+ totalEmpWage);
+console.log("Employee wage array is: "+empwageArray)
 }
+
 
