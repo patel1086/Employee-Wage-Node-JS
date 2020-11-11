@@ -71,3 +71,11 @@ function mapDayWithWage(dailyWage){
 }
 let mapDayWithWageArr=empwageArray.map(mapDayWithWage);
 console.log("Daily Wage Map: "+mapDayWithWageArr);
+
+//Show days when full time wage of 160 were earned
+function fullTimeWage(dailyWage){
+    return dailyWage.includes("160");
+}
+let fullDayWageArr=mapDayWithWageArr.filter(fullTimeWage);
+console.log("Daily wage filter when full time wage earned: "+fullDayWageArr);
+
