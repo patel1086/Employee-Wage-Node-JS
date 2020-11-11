@@ -63,4 +63,11 @@ function sum(dailyWage){
 empwageArray.forEach(sum);
 console.log("Total Working days: "+workingDays+" total EmpHrs: "+totalEmpHrs+" total EmpWages: "+totalEmpWage);
 
-
+//show the day along with daily wage using array map helper function
+let dailyCntr=0;
+function mapDayWithWage(dailyWage){
+    dailyCntr++;
+    return dailyCntr+" = "+dailyWage;
+}
+let mapDayWithWageArr=empwageArray.map(mapDayWithWage);
+console.log("Daily Wage Map: "+mapDayWithWageArr);
