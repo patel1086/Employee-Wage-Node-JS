@@ -90,3 +90,9 @@ function isAllFullTimeWage(dailyWage){
     return dailyWage.includes("160");
 }
 console.log("Check all emp have full time wage: "+mapDayWithWageArr.every(isAllFullTimeWage));
+
+//Check if there is any part time wage
+function isAnyPartTimeWage(dailyWage){
+    return dailyWage.includes("80");
+}
+console.log("Check if any part time wage: "+mapDayWithWageArr.some(isAnyPartTimeWage));
