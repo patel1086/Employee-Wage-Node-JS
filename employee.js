@@ -55,4 +55,12 @@ console.log("Total Employee Hours is: "+totalEmpHrs+" And total employee Wages i
 console.log("Employee wage array is: "+empwageArray)
 }
 
+//calculate total wage using forEach
+var totalEmpWage=0;
+function sum(dailyWage){
+    totalEmpWage+=dailyWage;
+}
+empwageArray.forEach(sum);
+console.log("Total Working days: "+workingDays+" total EmpHrs: "+totalEmpHrs+" total EmpWages: "+totalEmpWage);
+
 
