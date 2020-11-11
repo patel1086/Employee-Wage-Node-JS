@@ -12,7 +12,7 @@ else
 } 
 
 //UC2-Calculate empwage according to emp's full time and part time job
-{
+
 const IS_PART_TIME=1;
 const IS_FULL_TIME=2;
 const PART_TIME_HOUR=4;
@@ -40,20 +40,27 @@ var empHrs=0;
 var workingDays=0;
 var totalEmpHrs=0;
 var empwageArray=new Array();
+var empDailyWageMap=new Map();
 function calEmpWage(empHrs){
     return empHrs*WAGER_PER_HOUR;
 }
-while(empHrs<MAX_HRS_IN_MONTH && workingDays<NUM_OF_WORKING_DAYS){
+while(empHrs<=MAX_HRS_IN_MONTH && workingDays<NUM_OF_WORKING_DAYS){
     workingDays++;
     let empCheck=Math.floor(Math.random()*10)%3;
     empHrs=getEmpHrs(empCheck);
     totalEmpHrs+=empHrs;
     empwageArray.push(calEmpWage(empHrs));
+    empDailyWageMap.set(workingDays,calEmpWage(empHrs));
     }
 totalEmpWage=calEmpWage(totalEmpHrs);
 console.log("Total Employee Hours is: "+totalEmpHrs+" And total employee Wages is: "+ totalEmpWage);
 console.log("Employee wage array is: "+empwageArray)
+console.log(empDailyWageMap);
+function totalWages(totalWage,dailyWage){
+    return totalWage+dailyWage;
 }
+console.log("Emp wage map totalHrs: "+Array.from(empDailyWageMap.values()).reduce(totalWages,0));
+
 
 //calculate total wage using forEach
 var totalEmpWage=0;
